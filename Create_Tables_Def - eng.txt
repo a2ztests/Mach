@@ -1,0 +1,798 @@
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[CSV_vw_DevelopmentExamination]    Script Date: 29/08/2018 13:32:33 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[CSV_vw_DevelopmentExamination](
+	[PersonId] [bigint] NOT NULL,
+	[ExaminationDate] [datetime] NOT NULL,
+	[IsInChildDevelopmentTracking] [bit] NULL,
+	[IsThereConcernForDevelopment] [smallint] NULL,
+	[IsThereConcernForDevelopmentDesc] [nvarchar](50) NULL,
+	[HasSuspicionOfHearingLoss] [smallint] NULL,
+	[HasSuspicionOfHearingLossDesc] [nvarchar](50) NULL,
+	[QuestionParent_Comment] [nvarchar](1200) NULL,
+	[CodeSummary] [smallint] NULL,
+	[SummaryDesc] [nvarchar](50) NULL,
+	[HasReferrals] [int] NOT NULL,
+	[Comment] [nvarchar](4000) NULL,
+	[okev_bemabat_acharey_etzem_na_panim] [nvarchar](50) NULL,
+	[mashmia_kolot_ketguva_lekolot_adam] [nvarchar](50) NULL,
+	[mechayech_chiyuch_chevrati] [nvarchar](50) NULL,
+	[merim_rosh_beshkiva_al_habeten] [nvarchar](50) NULL,
+	[meshalev_etzbaot_mesachek_bayadiam] [nvarchar](50) NULL,
+	[ochez_moshit_yad_lechefetz] [nvarchar](50) NULL,
+	[okev_bemabat_bekav_anachi] [nvarchar](50) NULL,
+	[megiv_lekolot_vetzlalim] [nvarchar](50) NULL,
+	[mashmia_kolot_meguvanim_kolel_itzurim] [nvarchar](50) NULL,
+	[megiv_behanaa_lekol_iledmut_adam] [nvarchar](50) NULL,
+	[merim_rosh_vebiet_chaze_beshkiva_al_habeten] [nvarchar](50) NULL,
+	[mithapech_mehagav_labeten_vemehabeten_lagav] [nvarchar](50) NULL,
+	[zochel_zchilat_tzir_gachon_al_shesh] [nvarchar](50) NULL,
+	[mavir_hefetz_miyad_leyad] [nvarchar](50) NULL,
+	[mekish_chefetz_echad_basheni_kemischak] [nvarchar](50) NULL,
+	[mashmia_havarot_chozrot_itzur_tnua] [nvarchar](50) NULL,
+	[mityashev_bekochot_atzmo] [nvarchar](50) NULL,
+	[mekim_atzmo_leamida] [nvarchar](50) NULL,
+	[tfisat_tzvat] [nvarchar](50) NULL,
+	[maachil_atzmo] [nvarchar](50) NULL,
+	[mefik_kolot_bedu_siach] [nvarchar](50) NULL,
+	[mevin_horaot_pshutot] [nvarchar](50) NULL,
+	[megiv_lekria_beshmo] [nvarchar](50) NULL,
+	[omer_mila_achat_o_mashmia_kolot_masmautiim] [nvarchar](50) NULL,
+	[mavchin_beino_levein_hasviva_hakrova_vemegiv_beofen_shone] [nvarchar](50) NULL,
+	[holech_beezra] [nvarchar](50) NULL,
+	[omer_shtaim_shalosh_milimí] [nvarchar](50) NULL,
+	[makir_lefachot_chelek_guf_echad] [nvarchar](50) NULL,
+	[matzbia_al_pi_bakasha_al_chaftzim_mukarim] [nvarchar](50) NULL,
+	[mare_retzonotav_bemechva_o_bemelel] [nvarchar](50) NULL,
+	[yotzer_kesher_ain_toch_kedey_mischak_meshutaf] [nvarchar](50) NULL,
+	[holech_lelo_ezra] [nvarchar](50) NULL,
+	[ole_bamadregot_beezra] [nvarchar](50) NULL,
+	[bone_migdal_mekubiyot] [nvarchar](50) NULL,
+	[maachil_atzmo_bekapit] [nvarchar](50) NULL,
+	[otzar_milim_meal_eser_milim] [nvarchar](50) NULL,
+	[begil_shantaim_lefachot_tzeruf_echad_shel_shtey_milim_lemishpat] [nvarchar](50) NULL,
+	[ratz_mibli_lipol] [nvarchar](50) NULL,
+	[ole_veyored_bamdregot_lelo_ezra] [nvarchar](50) NULL,
+	[mekavetz_vemavlit_sfataim_kedy_latet_neshika] [nvarchar](50) NULL,
+	[mechake_kavim_meunachim_ofkiyim_vemeugalim] [nvarchar](50) NULL,
+	[kinuy_beshem] [nvarchar](50) NULL,
+	[havanat_peulot_vechelkey_dibur] [nvarchar](50) NULL,
+	[omed_al_regel_achat] [nvarchar](50) NULL,
+	[kofetz_memadrega] [nvarchar](50) NULL,
+	[noel_naalayim_vemitlabesh_prat_lekiftur] [nvarchar](50) NULL,
+	[mechake_dugmat_plus_vematik_igul] [nvarchar](50) NULL,
+	[mone_ad_shalosh] [nvarchar](50) NULL,
+	[mekir_lefachot_shalosh_milot_yachas_kegon_al_alyad_mitachat_vaod] [nvarchar](50) NULL,
+	[hadibur_muvan] [nvarchar](50) NULL,
+	[kofetz_al_regel_achat] [nvarchar](50) NULL,
+	[holech_akev_betzad_agudal] [nvarchar](50) NULL,
+	[mitlabesh_beofen_atzmayi] [nvarchar](50) NULL,
+	[ochel_bezrat_kaf_vemazleg] [nvarchar](50) NULL,
+	[maatik_tzurot_geometriyot_ribua_yix_vemeshulash] [nvarchar](50) NULL,
+	[metzayer_dmut_adam] [nvarchar](50) NULL,
+	[mesachek] [nvarchar](50) NULL,
+	[metaer_tmuna_toch_shimush_bepalim_nechonim] [nvarchar](50) NULL,
+	[one_al_shelot_hitmatzut_kegon_shem_gil] [nvarchar](50) NULL,
+	[habaa_chofshit] [nvarchar](50) NULL,
+	[hadibur_mechuvan_lematrat_tikshoret] [nvarchar](50) NULL,
+	[mishtatef_bepeyilut_yom_yom] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_BigDataDemography]    Script Date: 29/08/2018 14:04:34 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_BigDataDemography](
+	[PersonId] [bigint] NOT NULL,
+	[IdEncrypt] [nvarchar](50) NULL,
+	[MotherId] [bigint] NOT NULL
+) ON [PRIMARY]
+
+GO
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_BloodCount]    Script Date: 29/08/2018 14:06:00 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_BloodCount](
+	[PersonId] [bigint] NOT NULL,
+	[BloodCountDate] [datetime] NOT NULL,
+	[ReportingSourceTypeDesc] [nvarchar](50) NULL,
+	[HGB] [decimal](18, 1) NULL,
+	[HGBValid] [smallint] NULL,
+	[MCV] [decimal](18, 1) NULL,
+	[MCH] [decimal](18, 1) NULL,
+	[RDW] [decimal](18, 1) NULL,
+	[IsReferral] [bit] NULL,
+	[Comments] [nvarchar](1200) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_DepressionInquiry]    Script Date: 29/08/2018 14:07:24 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_DepressionInquiry](
+	[PersonId] [bigint] NULL,
+	[MotherPersonId] [bigint] NOT NULL,
+	[QuestionnaireDate] [datetime] NOT NULL,
+	[CodeStatus] [smallint] NOT NULL,
+	[StatusDesc] [nvarchar](50) NULL,
+	[CodeStatusReason] [smallint] NULL,
+	[StatusReasonDesc] [nvarchar](50) NULL,
+	[MarkInGeneral] [int] NULL,
+	[MarkForQuestionTen] [int] NULL,
+	[Commnet] [nvarchar](1200) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_DevelopmentExamination]    Script Date: 29/08/2018 14:07:56 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_DevelopmentExamination](
+	[PersonId] [bigint] NOT NULL,
+	[ExaminationDate] [datetime] NOT NULL,
+	[IsInChildDevelopmentTracking] [bit] NULL,
+	[IsThereConcernForDevelopment] [smallint] NULL,
+	[IsThereConcernForDevelopmentDesc] [nvarchar](50) NULL,
+	[HasSuspicionOfHearingLoss] [smallint] NULL,
+	[HasSuspicionOfHearingLossDesc] [nvarchar](50) NULL,
+	[QuestionParent_Comment] [nvarchar](1200) NULL,
+	[CodeSummary] [smallint] NULL,
+	[SummaryDesc] [nvarchar](50) NULL,
+	[HasReferrals] [int] NOT NULL,
+	[Comment] [nvarchar](1200) NULL,
+	[okev_bemabat_acharey_etzem_na_panim] [nvarchar](50) NULL,
+	[mashmia_kolot_ketguva_lekolot_adam] [nvarchar](50) NULL,
+	[mechayech_chiyuch_chevrati] [nvarchar](50) NULL,
+	[merim_rosh_beshkiva_al_habeten] [nvarchar](50) NULL,
+	[meshalev_etzbaot_mesachek_bayadiam] [nvarchar](50) NULL,
+	[ochez_moshit_yad_lechefetz] [nvarchar](50) NULL,
+	[okev_bemabat_bekav_anachi] [nvarchar](50) NULL,
+	[megiv_lekolot_vetzlalim] [nvarchar](50) NULL,
+	[mashmia_kolot_meguvanim_kolel_itzurim] [nvarchar](50) NULL,
+	[megiv_behanaa_lekol_iledmut_adam] [nvarchar](50) NULL,
+	[merim_rosh_vebiet_chaze_beshkiva_al_habeten] [nvarchar](50) NULL,
+	[mithapech_mehagav_labeten_vemehabeten_lagav] [nvarchar](50) NULL,
+	[zochel_zchilat_tzir_gachon_al_shesh] [nvarchar](50) NULL,
+	[mavir_hefetz_miyad_leyad] [nvarchar](50) NULL,
+	[mekish_chefetz_echad_basheni_kemischak] [nvarchar](50) NULL,
+	[mashmia_havarot_chozrot_itzur_tnua] [nvarchar](50) NULL,
+	[mityashev_bekochot_atzmo] [nvarchar](50) NULL,
+	[mekim_atzmo_leamida] [nvarchar](50) NULL,
+	[tfisat_tzvat] [nvarchar](50) NULL,
+	[maachil_atzmo] [nvarchar](50) NULL,
+	[mefik_kolot_bedu_siach] [nvarchar](50) NULL,
+	[mevin_horaot_pshutot] [nvarchar](50) NULL,
+	[megiv_lekria_beshmo] [nvarchar](50) NULL,
+	[omer_mila_achat_o_masmia_kolot_masmautiim] [nvarchar](50) NULL,
+	[mavchin_beino_levein_hasviva_hakrova_vemegiv_beofen_shone] [nvarchar](50) NULL,
+	[holech_beezra] [nvarchar](50) NULL,
+	[omer_shtaim_shalosh_milimí] [nvarchar](50) NULL,
+	[makir_lefachot_chelek_guf_echad] [nvarchar](50) NULL,
+	[matzbia_al_pi_bakasha_al_chaftzim_mukarim] [nvarchar](50) NULL,
+	[mare_retzonotav_bemechva_o_bemelel] [nvarchar](50) NULL,
+	[yotzer_kesher_ain_toch_kedey_mischak_meshutaf] [nvarchar](50) NULL,
+	[holech_lelo_ezra] [nvarchar](50) NULL,
+	[ole_bamadregot_beezra] [nvarchar](50) NULL,
+	[bone_migdal_mekubiyot] [nvarchar](50) NULL,
+	[maachil_atzmo_bekapit] [nvarchar](50) NULL,
+	[otzar_milim_meal_eser_milim] [nvarchar](50) NULL,
+	[begil_shantaim_lefachot_tzeruf_echad_shel_shtey_milim_lemishpat] [nvarchar](50) NULL,
+	[ratz_mibli_lipol] [nvarchar](50) NULL,
+	[ole_veyored_bamdregot_lelo_ezra] [nvarchar](50) NULL,
+	[mekavetz_vemavlit_sfataim_kedy_latet_neshika] [nvarchar](50) NULL,
+	[mechake_kavim_meunachim_ofkiyim_vemeugalim] [nvarchar](50) NULL,
+	[kinuy_beshem] [nvarchar](50) NULL,
+	[havanat_peulot_vechelkey_dibur] [nvarchar](50) NULL,
+	[omed_al_regel_achat] [nvarchar](50) NULL,
+	[kofetz_memadrega] [nvarchar](50) NULL,
+	[noel_naalayim_vemitlabesh_prat_lekiftur] [nvarchar](50) NULL,
+	[mechake_dugmat_plus_vematik_igul] [nvarchar](50) NULL,
+	[mone_ad_shalosh] [nvarchar](50) NULL,
+	[mekir_lefachot_shalosh_milot_yachas_kegon_al_alyad_mitachat_vaod] [nvarchar](50) NULL,
+	[hadibur_muvan] [nvarchar](50) NULL,
+	[kofetz_al_regel_achat] [nvarchar](50) NULL,
+	[holech_akev_betzad_agudal] [nvarchar](50) NULL,
+	[mitlabesh_beofen_atzmayi] [nvarchar](50) NULL,
+	[ochel_bezrat_kaf_vemazleg] [nvarchar](50) NULL,
+	[maatik_tzurot_geometriyot_ribua_yix_vemeshulash] [nvarchar](50) NULL,
+	[îöééø ãîåú àãí] [nvarchar](50) NULL,
+	[mesachek] [nvarchar](50) NULL,
+	[metaer_tmuna_toch_shimush_bepalim_nechonim] [nvarchar](50) NULL,
+	[one_al_shelot_hitmatzut_kegon_shem_gil] [nvarchar](50) NULL,
+	[habaa_chofshit] [nvarchar](50) NULL,
+	[hadibur_mechuvan_lematrat_tikshoret] [nvarchar](50) NULL,
+	[mishtatef_bepeyilut_yom_yom] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_Diagnosis]    Script Date: 29/08/2018 14:08:28 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_Diagnosis](
+	[PersonId] [bigint] NOT NULL,
+	[DiagnosisDate] [datetime] NOT NULL,
+	[CodeDiagnosisLevelOne] [smallint] NOT NULL,
+	[DiagnosisLevelOneDesc] [nvarchar](100) NOT NULL,
+	[CodeDiagnosisLevelTwo] [smallint] NOT NULL,
+	[DiagnosisLevelTwoDesc] [nvarchar](100) NOT NULL,
+	[CodeDiagnosisLevelThree] [smallint] NULL,
+	[DiagnosisLevelThreeDesc] [nvarchar](50) NULL,
+	[CodeDiagnosisStatus] [smallint] NULL,
+	[DiagnosisStatusDesc] [nvarchar](100) NULL,
+	[DiagnosisStatusDetails] [nvarchar](1200) NULL,
+	[Comment] [nvarchar](1200) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_EducationFacility]    Script Date: 29/08/2018 14:08:44 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_EducationFacility](
+	[PersonId] [bigint] NULL,
+	[PersonName] [nvarchar](100) NULL,
+	[EducationFacilityTypeDesc] [nvarchar](100) NULL,
+	[PersonAge] [nvarchar](50) NULL,
+	[StartDate] [datetime] NOT NULL,
+	[Comments] [nvarchar](1200) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_NewbornDetails]    Script Date: 29/08/2018 14:09:37 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_NewbornDetails](
+	[PersonId] [bigint] NOT NULL,
+	[PregnancyWeek] [decimal](18, 1) NULL,
+	[BirthWeight] [decimal](18, 3) NULL,
+	[ApgarOneMinute] [smallint] NULL,
+	[ApgarFiveMinutes] [smallint] NULL,
+	[BirthOrder] [int] NULL,
+	[NumNewBornsInBirth] [int] NULL,
+	[HeadCircumference] [decimal](18, 1) NULL,
+	[HospitalLeaveDate] [datetime] NULL,
+	[LeaveHospitalWeight] [decimal](18, 3) NULL,
+	[Length] [decimal](18, 1) NULL,
+	[BirthType] [nvarchar](50) NULL,
+	[G6PDStatus] [nvarchar](50) NULL,
+	[HearingScreening] [nvarchar](50) NULL,
+	[NewbornPosition] [nvarchar](50) NULL,
+	[RedReflexDesc] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_MotherDemography]    Script Date: 29/08/2018 14:09:28 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_MotherDemography](
+	[MotherId] [bigint] NOT NULL,
+	[BirthDate] [char](8) NOT NULL,
+	[CountryDesc] [nvarchar](50) NULL,
+	[ShntAlia] [smallint] NOT NULL,
+	[NationDesc] [nvarchar](50) NULL,
+	[NationDetails] [nvarchar](400) NULL,
+	[EmploymentStatusDesc] [nvarchar](50) NULL,
+	[Profession] [nvarchar](400) NULL,
+	[EducationLevelDesc] [nvarchar](50) NULL,
+	[EducationLevelDetails] [nvarchar](400) NULL,
+	[MaritalStatusDesc] [nvarchar](50) NULL,
+	[MaritalStatusDetails] [nvarchar](400) NULL,
+	[IsRelation] [nvarchar](50) NULL,
+	[RelationDetails] [nvarchar](400) NULL,
+	[Comment] [nvarchar](1200) NOT NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_Mgaaim]    Script Date: 29/08/2018 14:09:21 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_Mgaaim](
+	[PersonId] [bigint] NOT NULL,
+	[VisitDate] [date] NULL,
+	[Action] [varchar](30) NOT NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_Growth]    Script Date: 29/08/2018 14:09:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_Growth](
+	[PersonId] [bigint] NOT NULL,
+	[ExaminationDate] [datetime] NOT NULL,
+	[Weight] [decimal](18, 3) NULL,
+	[WHO_WeightPercentile] [decimal](18, 3) NULL,
+	[Height] [decimal](18, 1) NULL,
+	[WHO_HeightPercentile] [decimal](18, 3) NULL,
+	[WHO_WeightHeightPercentile] [decimal](18, 3) NULL,
+	[HeadCircumference] [decimal](18, 1) NULL,
+	[WHO_HeadCircumferencePercentile] [decimal](18, 3) NULL,
+	[WHO_BMIPercentile] [decimal](18, 3) NULL,
+	[SummaryDesc] [nvarchar](50) NULL,
+	[Comment] [nvarchar](1200) NULL,
+	[Referral] [int] NOT NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_SightExamination]    Script Date: 29/08/2018 14:11:17 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_SightExamination](
+	[PersonId] [bigint] NOT NULL,
+	[SightExaminationDate] [datetime] NULL,
+	[InformationSourceDesc] [nvarchar](50) NULL,
+	[SightExaminationTypeDesc] [nvarchar](50) NULL,
+	[ChartTypeDesc] [nvarchar](50) NULL,
+	[ExaminationDistance] [smallint] NULL,
+	[SightAcuity_LeftEye] [nvarchar](50) NULL,
+	[SightAcuity_RightEye] [nvarchar](50) NULL,
+	[Result_LeftEye] [nvarchar](50) NULL,
+	[Result_RightEye] [nvarchar](50) NULL,
+	[Findings] [nvarchar](1200) NULL,
+	[Comments] [nvarchar](1200) NULL,
+	[Referral] [int] NOT NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_Sensitivities]    Script Date: 29/08/2018 14:11:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_Sensitivities](
+	[PersonId] [bigint] NOT NULL,
+	[CodeSensitivityType] [smallint] NOT NULL,
+	[SensitivityTypeDesc] [nvarchar](50) NOT NULL,
+	[CodeSensitivitySubType] [smallint] NULL,
+	[SensitivitySubTypeDesc] [nvarchar](50) NULL,
+	[CodeResponseType] [smallint] NULL,
+	[ResponseTypeDesc] [nvarchar](50) NULL,
+	[SymptomTypeDesc] [varchar](max) NULL,
+	[SymptomDetails] [nvarchar](1200) NULL,
+	[Comments] [nvarchar](1200) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_Risks]    Script Date: 29/08/2018 14:10:59 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_Risks](
+	[PersonId] [bigint] NOT NULL,
+	[CodeRiskType] [smallint] NOT NULL,
+	[RiskTypeDesc] [nvarchar](100) NOT NULL,
+	[RiskTypeDetails] [nvarchar](1200) NULL,
+	[CodeRiskCategory] [smallint] NOT NULL,
+	[RiskCategoryDesc] [nvarchar](50) NOT NULL,
+	[RiskDate] [datetime] NOT NULL,
+	[Comments] [nvarchar](1200) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_Referrals]    Script Date: 29/08/2018 14:10:52 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_Referrals](
+	[PersonId] [bigint] NOT NULL,
+	[ReferralDate] [datetime] NOT NULL,
+	[CodeReferralRecipient] [smallint] NOT NULL,
+	[ReferralRecipientDesc] [nvarchar](50) NOT NULL,
+	[ReferralRecipientDetails] [nvarchar](1200) NULL,
+	[ReferralReasons] [varchar](max) NULL,
+	[ReferralReasonDetails] [nvarchar](1200) NULL,
+	[ReferralExaminations] [varchar](max) NULL,
+	[ReferralExaminationsDetails] [nvarchar](1200) NULL,
+	[Summary] [nvarchar](1200) NULL,
+	[CodeReferralStatus] [smallint] NULL,
+	[ReferralStatusDesc] [nvarchar](50) NULL,
+	[CodeIsReferralClarificationCompleted] [smallint] NOT NULL,
+	[IsReferralClarificationCompletedDesc] [nvarchar](50) NULL,
+	[ResultDetails] [nvarchar](1200) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_PhysicalAssessment]    Script Date: 29/08/2018 14:10:44 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_PhysicalAssessment](
+	[PersonId] [float] NOT NULL,
+	[AssessmentDate] [datetime] NULL,
+	[ExaminationType] [smallint] NOT NULL,
+	[ExaminationTypeDesc] [nvarchar](50) NULL,
+	[RoleCode] [smallint] NULL,
+	[RoleDesc] [nvarchar](50) NULL,
+	[HasReferal] [int] NOT NULL,
+	[Comment] [nvarchar](1200) NULL,
+	[matzav_klalii_mimtzayim] [nvarchar](50) NULL,
+	[matzav_klalii_perut_mimtzayim] [nvarchar](max) NULL,
+	[od_mimtzayim] [nvarchar](50) NULL,
+	[od_perut_mimtzayim] [nvarchar](max) NULL,
+	[gulgolet_mimtzayim] [nvarchar](50) NULL,
+	[gulgolet_perut_mimtzayim] [nvarchar](max) NULL,
+	[mirpasim_mimtzayim] [nvarchar](50) NULL,
+	[mirpasim_perut_mimtzayim] [nvarchar](max) NULL,
+	[panim_veaf_mimtzayim] [nvarchar](50) NULL,
+	[panim_veaf_perut_mimtzayim] [nvarchar](max) NULL,
+	[enayim_mimtzayim] [nvarchar](50) NULL,
+	[enayim_perut_mimtzayim] [nvarchar](max) NULL,
+	[oznayim_mimtzayim] [nvarchar](50) NULL,
+	[oznayim_perut_mimtzayim] [nvarchar](max) NULL,
+	[chalal_hape_vehalashon_mimtzayim] [nvarchar](50) NULL,
+	[chalal_hape_vehalashon_perut_mimtzayim] [nvarchar](max) NULL,
+	[tzavar_mimtzayim] [nvarchar](50) NULL,
+	[tzavar_perut_mimtzayim] [nvarchar](max) NULL,
+	[mivne_mimtzayim] [nvarchar](50) NULL,
+	[mivne_perut_mimtzayim] [nvarchar](max) NULL,
+	[nesima_vereot_mimtzayim] [nvarchar](50) NULL,
+	[ðnesima_vereot_perut_mimtzayim] [nvarchar](max) NULL,
+	[lev_mimtzayim] [nvarchar](50) NULL,
+	[lev_perut_mimtzayim] [nvarchar](max) NULL,
+	[beten_vetabur_mimtzayim] [nvarchar](50) NULL,
+	[beten_vetabur_perut_mimtzayim] [nvarchar](max) NULL,
+	[evrey_hamin_mimtzayim] [nvarchar](50) NULL,
+	[evrey_hamin_perut_mimtzayim] [nvarchar](max) NULL,
+	[gapayim_mimtzayim] [nvarchar](50) NULL,
+	[gapayim_perut_mimtzayim] [nvarchar](max) NULL,
+	[pirkey_hayerechaim_mimtzayim] [nvarchar](50) NULL,
+	[pirkey_hayerechaim_peru_mimtzayim] [nvarchar](max) NULL,
+	[amud_shidra_mimtzayim] [nvarchar](50) NULL,
+	[amud_shidra_perut_mimtzayim] [nvarchar](max) NULL,
+	[maarechet_haatzabim_mimtzayim] [nvarchar](50) NULL,
+	[maarechet_haatzabim_perut_mimtzayim] [nvarchar](max) NULL,
+	[dfakim_femoralyim_mimtzayim] [nvarchar](50) NULL,
+	[dfakim_femoralyim_perut_mimtzayim] [nvarchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_NutritionTracking]    Script Date: 29/08/2018 14:10:35 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_NutritionTracking](
+	[PersonId] [bigint] NOT NULL,
+	[NutritionTrackingDate] [datetime] NOT NULL,
+	[FormulaManufacturerDesc] [nvarchar](50) NULL,
+	[FormulaTypeDesc] [nvarchar](50) NULL,
+	[NursingEndAgeMonths] [decimal](18, 1) NULL,
+	[FormulaStartAgeMonths] [decimal](18, 1) NULL,
+	[FormulaDetails] [nvarchar](250) NULL,
+	[FormulaReasonDesc] [nvarchar](50) NULL,
+	[IronDesc] [nvarchar](50) NULL,
+	[VitaminD3Desc] [nvarchar](50) NULL,
+	[NursingYN] [nvarchar](50) NULL,
+	[FormulaYN] [nvarchar](50) NULL,
+	[IsConsumptionAppropriteToAgeYN] [nvarchar](50) NULL,
+	[HasProblemsWithFeedingYN] [nvarchar](50) NULL,
+	[ParentsQuestion] [nvarchar](1200) NULL,
+	[IsGiven_Water] [smallint] NULL,
+	[AdditionalDrinksDetails] [nvarchar](1200) NULL,
+	[FamilyNutritionDesc] [nvarchar](1200) NULL,
+	[IsGiven_Fruits] [bit] NULL,
+	[IsGiven_Proteins] [bit] NULL,
+	[IsGiven_DairyProducts] [bit] NULL,
+	[IsGiven_Vegetables] [bit] NULL,
+	[IsGiven_Cereals] [bit] NULL,
+	[IsGiven_OtherFood] [bit] NULL,
+	[IsGiven_OtherFoodDetails] [nvarchar](250) NULL,
+	[IsSelfFeeding] [bit] NULL,
+	[IsGivenFromFamilyMeal] [bit] NULL,
+	[IsTrackingRequired] [bit] NULL,
+	[FoodsStartAgeMonths] [decimal](18, 1) NULL,
+	[Comment] [nvarchar](1200) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[www_CSV_vw_DevelopmentExamination]    Script Date: 29/08/2018 14:12:29 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[www_CSV_vw_DevelopmentExamination](
+	[PersonId] [nvarchar](255) NULL,
+	[ExaminationDate] [nvarchar](50) NULL,
+	[IsInChildDevelopmentTracking] [nvarchar](50) NULL,
+	[IsThereConcernForDevelopment] [nvarchar](50) NULL,
+	[IsThereConcernForDevelopmentDesc] [nvarchar](50) NULL,
+	[HasSuspicionOfHearingLoss] [nvarchar](50) NULL,
+	[HasSuspicionOfHearingLossDesc] [nvarchar](50) NULL,
+	[QuestionParent_Comment] [nvarchar](4000) NULL,
+	[CodeSummary] [nvarchar](50) NULL,
+	[SummaryDesc] [nvarchar](50) NULL,
+	[HasReferrals] [nvarchar](50) NULL,
+	[Comment] [nvarchar](4000) NULL,
+	[okev_bemabat_acharey_etzem_na_panim] [nvarchar](50) NULL,
+	[mashmia_kolot_ketguva_lekolot_adam] [nvarchar](50) NULL,
+	[mechayech_chiyuch_chevrati] [nvarchar](50) NULL,
+	[merim_rosh_beshkiva_al_habeten] [nvarchar](50) NULL,
+	[meshalev_etzbaot_mesachek_bayadiam] [nvarchar](50) NULL,
+	[ochez_moshit_yad_lechefetz] [nvarchar](50) NULL,
+	[okev_bemabat_bekav_anachi] [nvarchar](50) NULL,
+	[megiv_lekolot_vetzlalim] [nvarchar](50) NULL,
+	[masmia_kolot_meguvanim_kolel_itzurim] [nvarchar](50) NULL,
+	[megiv_behanaa_lekol_iledmut_adam] [nvarchar](50) NULL,
+	[merim_rosh_vebiet_chaze_beshkiva_al_habeten] [nvarchar](50) NULL,
+	[mithapech_mehagav_labeten_vemehabeten_lagav] [nvarchar](50) NULL,
+	[zochel_zchilat_tzir_gachon_al_shesh] [nvarchar](50) NULL,
+	[mavir_hefetz_miyad_leyad] [nvarchar](50) NULL,
+	[mekish_chefetz_echad_basheni_kemischak] [nvarchar](50) NULL,
+	[mashmia_havarot_chozrot_itzur_tnua] [nvarchar](50) NULL,
+	[mityashev_bekochot_atzmo] [nvarchar](50) NULL,
+	[mekim_atzmo_leamida] [nvarchar](50) NULL,
+	[tfisat_tzvat] [nvarchar](50) NULL,
+	[maachil_atzmo] [nvarchar](50) NULL,
+	[mefik_kolot_bedu_siach] [nvarchar](50) NULL,
+	[mevin_horaot_pshutot] [nvarchar](50) NULL,
+	[megiv_lekria_beshmo] [nvarchar](50) NULL,
+	[omer_mila_achat_o_masmia_kolot_masmautiim] [nvarchar](50) NULL,
+	[mavchin_beino_levein_hasviva_hakrova_vemegiv_beofen_shone] [nvarchar](50) NULL,
+	[holech_beezra] [nvarchar](50) NULL,
+	[omer_shtaim_shalosh_milimí] [nvarchar](50) NULL,
+	[makir_lefachot_chelek_guf_echad] [nvarchar](50) NULL,
+	[matzbia_al_pi_bakasha_al_chaftzim_mukarim] [nvarchar](50) NULL,
+	[mare_retzonotav_bemechva_o_bemelel] [nvarchar](50) NULL,
+	[yotzer_kesher_ain_toch_kedey_mischak_meshutaf] [nvarchar](50) NULL,
+	[holech_lelo_ezra] [nvarchar](50) NULL,
+	[ole_bamadregot_beezra] [nvarchar](50) NULL,
+	[bone_migdal_mekubiyot] [nvarchar](50) NULL,
+	[maachil_atzmo_bekapit] [nvarchar](50) NULL,
+	[otzar_milim_meal_eser_milim] [nvarchar](50) NULL,
+	[begil_shantaim_lefachot_tzeruf_echad_shel_shtey_milim_lemishpat] [nvarchar](50) NULL,
+	[ratz_mibli_lipol] [nvarchar](50) NULL,
+	[ole_veyored_bamdregot_lelo_ezra] [nvarchar](50) NULL,
+	[mekavetz_vemavlit_sfataim_kedy_latet_neshika] [nvarchar](50) NULL,
+	[mechake_kavim_meunachim_ofkiyim_vemeugalim] [nvarchar](50) NULL,
+	[kinuy_beshem] [nvarchar](50) NULL,
+	[havanat_peulot_vechelkey_dibur] [nvarchar](50) NULL,
+	[omed_al_regel_achat] [nvarchar](50) NULL,
+	[kofetz_memadrega] [nvarchar](50) NULL,
+	[noel_naalayim_vemitlabesh_prat_lekiftur] [nvarchar](50) NULL,
+	[mechake_dugmat_plus_vematik_igul] [nvarchar](50) NULL,
+	[mone_ad_shalosh] [nvarchar](50) NULL,
+	[mekir_lefachot_shalosh_milot_yachas_kegon_al_alyad_mitachat_vaod] [nvarchar](50) NULL,
+	[hadibur_muvan] [nvarchar](50) NULL,
+	[kofetz_al_regel_achat] [nvarchar](50) NULL,
+	[holech_akev_betzad_agudal] [nvarchar](50) NULL,
+	[mitlabesh_beofen_atzmayi] [nvarchar](50) NULL,
+	[ochel_bezrat_kaf_vemazleg] [nvarchar](50) NULL,
+	[maatik_tzurot_geometriyot_ribua_yix_vemeshulash] [nvarchar](50) NULL,
+	[metzayer_dmut_adam] [nvarchar](50) NULL,
+	[mesachek] [nvarchar](50) NULL,
+	[metaer_tmuna_toch_shimush_bepalim_nechonim] [nvarchar](50) NULL,
+	[one_al_shelot_hitmatzut_kegon_shem_gil] [nvarchar](50) NULL,
+	[habaa_chofshit] [nvarchar](50) NULL,
+	[hadibur_mechuvan_lematrat_tikshoret] [nvarchar](50) NULL,
+	[mishtatef_bepeyilut_yom_yom] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_VaccinationsPerPerson]    Script Date: 29/08/2018 14:12:21 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BRIUTNT\amir.shaked].[vw_VaccinationsPerPerson](
+	[PersonId] [bigint] NOT NULL,
+	[VaccinationDesc] [nvarchar](50) NOT NULL,
+	[VaccinationDate] [datetime] NOT NULL,
+	[VacStatusDesc] [nvarchar](50) NOT NULL,
+	[VacStatusReasonDesc] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++

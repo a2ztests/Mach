@@ -1,0 +1,618 @@
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_BigDataDemography]    Script Date: 29/08/2018 14:04:34 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BigData].[vw_BigDataDemography](
+	[PersonId] [bigint] NOT NULL,
+	[IdEncrypt] [nvarchar](50) NULL,
+	[MotherId] [bigint] NOT NULL
+) ON [PRIMARY]
+
+GO
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_BloodCount]    Script Date: 29/08/2018 14:06:00 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BigData].[vw_BloodCount](
+	[PersonId] [bigint] NOT NULL,
+	[BloodCountDate] [datetime] NOT NULL,
+	[ReportingSourceTypeDesc] [nvarchar](50) NULL,
+	[HGB] [decimal](18, 1) NULL,
+	[HGBValid] [smallint] NULL,
+	[MCV] [decimal](18, 1) NULL,
+	[MCH] [decimal](18, 1) NULL,
+	[RDW] [decimal](18, 1) NULL,
+	[IsReferral] [bit] NULL,
+	[Comments] [nvarchar](1200) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_DepressionInquiry]    Script Date: 29/08/2018 14:07:24 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BigData].[vw_DepressionInquiry](
+	[PersonId] [bigint] NULL,
+	[MotherPersonId] [bigint] NOT NULL,
+	[QuestionnaireDate] [datetime] NOT NULL,
+	[CodeStatus] [smallint] NOT NULL,
+	[StatusDesc] [nvarchar](50) NULL,
+	[CodeStatusReason] [smallint] NULL,
+	[StatusReasonDesc] [nvarchar](50) NULL,
+	[MarkInGeneral] [int] NULL,
+	[MarkForQuestionTen] [int] NULL,
+	[Commnet] [nvarchar](1200) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_DevelopmentExamination]    Script Date: 29/08/2018 14:07:56 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BigData].[vw_DevelopmentExamination](
+	[PersonId] [bigint] NOT NULL,
+	[ExaminationDate] [datetime] NOT NULL,
+	[IsInChildDevelopmentTracking] [bit] NULL,
+	[IsThereConcernForDevelopment] [smallint] NULL,
+	[IsThereConcernForDevelopmentDesc] [nvarchar](50) NULL,
+	[HasSuspicionOfHearingLoss] [smallint] NULL,
+	[HasSuspicionOfHearingLossDesc] [nvarchar](50) NULL,
+	[QuestionParent_Comment] [nvarchar](1200) NULL,
+	[CodeSummary] [smallint] NULL,
+	[SummaryDesc] [nvarchar](50) NULL,
+	[HasReferrals] [int] NOT NULL,
+	[Comment] [nvarchar](1200) NULL,
+	[עוקב במבט אחרי עצם נע-פנים] [nvarchar](50) NULL,
+	[משמיע קולות כתגובה לקולות אדם] [nvarchar](50) NULL,
+	[מחייך חיוך חברתי] [nvarchar](50) NULL,
+	[מרים ראש בשכיבה על הבטן] [nvarchar](50) NULL,
+	[משלב אצבעות, משחק בידיים] [nvarchar](50) NULL,
+	[אוחז-מושיט ידיים לחפץ] [nvarchar](50) NULL,
+	[עוקב במבט בקו אנכי] [nvarchar](50) NULL,
+	[מגיב לקולות וצלילים] [nvarchar](50) NULL,
+	[משמיע קולות מגוונים כולל עיצורים] [nvarchar](50) NULL,
+	[מגיב בהנאה לקול ולדמות אדם] [nvarchar](50) NULL,
+	[מרים ראש  ובית חזה בשכיבה על הבטן] [nvarchar](50) NULL,
+	[מתהפך מהגב לבטן ומהבטן לגב] [nvarchar](50) NULL,
+	[זוחל זחילת  ציר-גחון- על 6 ] [nvarchar](50) NULL,
+	[מעביר חפץ מיד ליד] [nvarchar](50) NULL,
+	[מקיש חפץ אחד בשני כמשחק] [nvarchar](50) NULL,
+	[משמיע הברות חוזרות, עיצור - תנועה] [nvarchar](50) NULL,
+	[מתיישב בכוחות עצמו] [nvarchar](50) NULL,
+	[מקים עצמו לעמידה ] [nvarchar](50) NULL,
+	[תפיסת צבת] [nvarchar](50) NULL,
+	[מאכיל עצמו] [nvarchar](50) NULL,
+	[מפיק קולות בדו שיח] [nvarchar](50) NULL,
+	[מבין הוראות פשוטות] [nvarchar](50) NULL,
+	[מגיב לקריאה בשמו] [nvarchar](50) NULL,
+	[אומר מילה אחת או משמיע קולות משמעותיים] [nvarchar](50) NULL,
+	[מבחין בינו לבין הסביבה הקרובה ומגיב באופן שונה] [nvarchar](50) NULL,
+	[הולך בעזרה] [nvarchar](50) NULL,
+	[אומר 2 - 3 מילים] [nvarchar](50) NULL,
+	[מכיר לפחות חלק גוף אחד] [nvarchar](50) NULL,
+	[מצביע על פי בקשה על חפצים מוכרים] [nvarchar](50) NULL,
+	[מראה רצונותיו במחווה או במלל] [nvarchar](50) NULL,
+	[יוצר קשר עין תוך כדי משחק משותף] [nvarchar](50) NULL,
+	[הולך ללא עזרה] [nvarchar](50) NULL,
+	[עולה במדרגות בעזרה] [nvarchar](50) NULL,
+	[בונה מגדל מקוביות] [nvarchar](50) NULL,
+	[מאכיל עצמו בכפית] [nvarchar](50) NULL,
+	[אוצר מילים מעל 10 מילים] [nvarchar](50) NULL,
+	[בגיל שנתיים לפחות צירוף אחד של 2 מילים למשפט] [nvarchar](50) NULL,
+	[רץ מבלי ליפול] [nvarchar](50) NULL,
+	[עולה ויורד במדרגות ללא עזרה] [nvarchar](50) NULL,
+	[מכווץ ומבליט שפתיים כדי לתת נשיקה] [nvarchar](50) NULL,
+	[מחקה קווים מאונכים, אופקיים ומעוגלים] [nvarchar](50) NULL,
+	[כינוי בשם] [nvarchar](50) NULL,
+	[הבנת פעולות וחלקי דיבור] [nvarchar](50) NULL,
+	[עומד על רגל אחת] [nvarchar](50) NULL,
+	[קופץ ממדרגה] [nvarchar](50) NULL,
+	[נועל נעליים ומתלבש פרט לכפתור] [nvarchar](50) NULL,
+	[מחקה דוגמת + ומעתיק עיגול] [nvarchar](50) NULL,
+	[מונה עד 3] [nvarchar](50) NULL,
+	[מכיר לפחות 3 מילות יחס, כגון: על, על יד, מתחת ועוד] [nvarchar](50) NULL,
+	[הדיבור מובן] [nvarchar](50) NULL,
+	[קופץ על רגל אחת] [nvarchar](50) NULL,
+	[הולך עקב בצד אגודל] [nvarchar](50) NULL,
+	[מתלבש באופן עצמאי] [nvarchar](50) NULL,
+	[אוכל בעזרת כף ומזלג] [nvarchar](50) NULL,
+	[מעתיק צורות גיאומטריות: רבוע, X, ומשולש] [nvarchar](50) NULL,
+	[מצייר דמות אדם] [nvarchar](50) NULL,
+	[משחק] [nvarchar](50) NULL,
+	[מתאר תמונה תוך שימוש בפעלים בזמנים נכונים] [nvarchar](50) NULL,
+	[עונה על שאלות התמצאות כגון : שם, גיל] [nvarchar](50) NULL,
+	[הבעה חופשית] [nvarchar](50) NULL,
+	[הדיבור מכוון למטרות תקשורת] [nvarchar](50) NULL,
+	[משתתף בפעילויות יומיום] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_Diagnosis]    Script Date: 29/08/2018 14:08:28 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BigData].[vw_Diagnosis](
+	[PersonId] [bigint] NOT NULL,
+	[DiagnosisDate] [datetime] NOT NULL,
+	[CodeDiagnosisLevelOne] [smallint] NOT NULL,
+	[DiagnosisLevelOneDesc] [nvarchar](100) NOT NULL,
+	[CodeDiagnosisLevelTwo] [smallint] NOT NULL,
+	[DiagnosisLevelTwoDesc] [nvarchar](100) NOT NULL,
+	[CodeDiagnosisLevelThree] [smallint] NULL,
+	[DiagnosisLevelThreeDesc] [nvarchar](50) NULL,
+	[CodeDiagnosisStatus] [smallint] NULL,
+	[DiagnosisStatusDesc] [nvarchar](100) NULL,
+	[DiagnosisStatusDetails] [nvarchar](1200) NULL,
+	[Comment] [nvarchar](1200) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_EducationFacility]    Script Date: 29/08/2018 14:08:44 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BigData].[vw_EducationFacility](
+	[PersonId] [bigint] NULL,
+	[PersonName] [nvarchar](100) NULL,
+	[EducationFacilityTypeDesc] [nvarchar](100) NULL,
+	[PersonAge] [nvarchar](50) NULL,
+	[StartDate] [datetime] NOT NULL,
+	[Comments] [nvarchar](1200) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_NewbornDetails]    Script Date: 29/08/2018 14:09:37 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BigData].[vw_NewbornDetails](
+	[PersonId] [bigint] NOT NULL,
+	[PregnancyWeek] [decimal](18, 1) NULL,
+	[BirthWeight] [decimal](18, 3) NULL,
+	[ApgarOneMinute] [smallint] NULL,
+	[ApgarFiveMinutes] [smallint] NULL,
+	[BirthOrder] [int] NULL,
+	[NumNewBornsInBirth] [int] NULL,
+	[HeadCircumference] [decimal](18, 1) NULL,
+	[HospitalLeaveDate] [datetime] NULL,
+	[LeaveHospitalWeight] [decimal](18, 3) NULL,
+	[Length] [decimal](18, 1) NULL,
+	[BirthType] [nvarchar](50) NULL,
+	[G6PDStatus] [nvarchar](50) NULL,
+	[HearingScreening] [nvarchar](50) NULL,
+	[NewbornPosition] [nvarchar](50) NULL,
+	[RedReflexDesc] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_MotherDemography]    Script Date: 29/08/2018 14:09:28 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [BigData].[vw_MotherDemography](
+	[MotherId] [bigint] NOT NULL,
+	[BirthDate] [char](8) NOT NULL,
+	[CountryDesc] [nvarchar](50) NULL,
+	[ShntAlia] [smallint] NOT NULL,
+	[NationDesc] [nvarchar](50) NULL,
+	[NationDetails] [nvarchar](400) NULL,
+	[EmploymentStatusDesc] [nvarchar](50) NULL,
+	[Profession] [nvarchar](400) NULL,
+	[EducationLevelDesc] [nvarchar](50) NULL,
+	[EducationLevelDetails] [nvarchar](400) NULL,
+	[MaritalStatusDesc] [nvarchar](50) NULL,
+	[MaritalStatusDetails] [nvarchar](400) NULL,
+	[IsRelation] [nvarchar](50) NULL,
+	[RelationDetails] [nvarchar](400) NULL,
+	[Comment] [nvarchar](1200) NOT NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_Mgaaim]    Script Date: 29/08/2018 14:09:21 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [BigData].[vw_Mgaaim](
+	[PersonId] [bigint] NOT NULL,
+	[VisitDate] [date] NULL,
+	[Action] [varchar](30) NOT NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_Growth]    Script Date: 29/08/2018 14:09:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BigData].[vw_Growth](
+	[PersonId] [bigint] NOT NULL,
+	[ExaminationDate] [datetime] NOT NULL,
+	[Weight] [decimal](18, 3) NULL,
+	[WHO_WeightPercentile] [decimal](18, 3) NULL,
+	[Height] [decimal](18, 1) NULL,
+	[WHO_HeightPercentile] [decimal](18, 3) NULL,
+	[WHO_WeightHeightPercentile] [decimal](18, 3) NULL,
+	[HeadCircumference] [decimal](18, 1) NULL,
+	[WHO_HeadCircumferencePercentile] [decimal](18, 3) NULL,
+	[WHO_BMIPercentile] [decimal](18, 3) NULL,
+	[SummaryDesc] [nvarchar](50) NULL,
+	[Comment] [nvarchar](1200) NULL,
+	[Referral] [int] NOT NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_SightExamination]    Script Date: 29/08/2018 14:11:17 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BigData].[vw_SightExamination](
+	[PersonId] [bigint] NOT NULL,
+	[SightExaminationDate] [datetime] NULL,
+	[InformationSourceDesc] [nvarchar](50) NULL,
+	[SightExaminationTypeDesc] [nvarchar](50) NULL,
+	[ChartTypeDesc] [nvarchar](50) NULL,
+	[ExaminationDistance] [smallint] NULL,
+	[SightAcuity_LeftEye] [nvarchar](50) NULL,
+	[SightAcuity_RightEye] [nvarchar](50) NULL,
+	[Result_LeftEye] [nvarchar](50) NULL,
+	[Result_RightEye] [nvarchar](50) NULL,
+	[Findings] [nvarchar](1200) NULL,
+	[Comments] [nvarchar](1200) NULL,
+	[Referral] [int] NOT NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_Sensitivities]    Script Date: 29/08/2018 14:11:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [BigData].[vw_Sensitivities](
+	[PersonId] [bigint] NOT NULL,
+	[CodeSensitivityType] [smallint] NOT NULL,
+	[SensitivityTypeDesc] [nvarchar](50) NOT NULL,
+	[CodeSensitivitySubType] [smallint] NULL,
+	[SensitivitySubTypeDesc] [nvarchar](50) NULL,
+	[CodeResponseType] [smallint] NULL,
+	[ResponseTypeDesc] [nvarchar](50) NULL,
+	[SymptomTypeDesc] [varchar](max) NULL,
+	[SymptomDetails] [nvarchar](1200) NULL,
+	[Comments] [nvarchar](1200) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_Risks]    Script Date: 29/08/2018 14:10:59 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BigData].[vw_Risks](
+	[PersonId] [bigint] NOT NULL,
+	[CodeRiskType] [smallint] NOT NULL,
+	[RiskTypeDesc] [nvarchar](100) NOT NULL,
+	[RiskTypeDetails] [nvarchar](1200) NULL,
+	[CodeRiskCategory] [smallint] NOT NULL,
+	[RiskCategoryDesc] [nvarchar](50) NOT NULL,
+	[RiskDate] [datetime] NOT NULL,
+	[Comments] [nvarchar](1200) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_Referrals]    Script Date: 29/08/2018 14:10:52 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [BigData].[vw_Referrals](
+	[PersonId] [bigint] NOT NULL,
+	[ReferralDate] [datetime] NOT NULL,
+	[CodeReferralRecipient] [smallint] NOT NULL,
+	[ReferralRecipientDesc] [nvarchar](50) NOT NULL,
+	[ReferralRecipientDetails] [nvarchar](1200) NULL,
+	[ReferralReasons] [varchar](max) NULL,
+	[ReferralReasonDetails] [nvarchar](1200) NULL,
+	[ReferralExaminations] [varchar](max) NULL,
+	[ReferralExaminationsDetails] [nvarchar](1200) NULL,
+	[Summary] [nvarchar](1200) NULL,
+	[CodeReferralStatus] [smallint] NULL,
+	[ReferralStatusDesc] [nvarchar](50) NULL,
+	[CodeIsReferralClarificationCompleted] [smallint] NOT NULL,
+	[IsReferralClarificationCompletedDesc] [nvarchar](50) NULL,
+	[ResultDetails] [nvarchar](1200) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_PhysicalAssessment]    Script Date: 29/08/2018 14:10:44 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BigData].[vw_PhysicalAssessment](
+	[PersonId] [float] NOT NULL,
+	[AssessmentDate] [datetime] NULL,
+	[ExaminationType] [smallint] NOT NULL,
+	[ExaminationTypeDesc] [nvarchar](50) NULL,
+	[RoleCode] [smallint] NULL,
+	[RoleDesc] [nvarchar](50) NULL,
+	[HasReferal] [int] NOT NULL,
+	[Comment] [nvarchar](1200) NULL,
+	[מצב כללי_ממצאים] [nvarchar](50) NULL,
+	[מצב כללי_פירוט ממצאים] [nvarchar](max) NULL,
+	[עור_ממצאים] [nvarchar](50) NULL,
+	[עור_פירוט ממצאים] [nvarchar](max) NULL,
+	[גולגולת_ממצאים] [nvarchar](50) NULL,
+	[גולגולת_פירוט ממצאים] [nvarchar](max) NULL,
+	[מרפסים_ממצאים] [nvarchar](50) NULL,
+	[מרפסים_פירוט ממצאים] [nvarchar](max) NULL,
+	[פנים ואף_ממצאים] [nvarchar](50) NULL,
+	[פנים ואף_פירוט ממצאים] [nvarchar](max) NULL,
+	[עיניים_ממצאים] [nvarchar](50) NULL,
+	[עיניים_פירוט ממצאים] [nvarchar](max) NULL,
+	[אוזניים_ממצאים] [nvarchar](50) NULL,
+	[אוזניים_פירוט ממצאים] [nvarchar](max) NULL,
+	[חלל הפה והלשון_ממצאים] [nvarchar](50) NULL,
+	[חלל הפה והלשון_פירוט ממצאים] [nvarchar](max) NULL,
+	[צוואר_ממצאים] [nvarchar](50) NULL,
+	[צוואר_פירוט ממצאים] [nvarchar](max) NULL,
+	[מבנה_ממצאים] [nvarchar](50) NULL,
+	[מבנה_פירוט ממצאים] [nvarchar](max) NULL,
+	[נשימה וריאות_ממצאים] [nvarchar](50) NULL,
+	[נשימה וריאות_פירוט ממצאים] [nvarchar](max) NULL,
+	[לב_ממצאים] [nvarchar](50) NULL,
+	[לב_פירוט ממצאים] [nvarchar](max) NULL,
+	[בטן וטבור_ממצאים] [nvarchar](50) NULL,
+	[בטן וטבור_פירוט ממצאים] [nvarchar](max) NULL,
+	[אברי המין_ממצאים] [nvarchar](50) NULL,
+	[אברי המין_פירוט ממצאים] [nvarchar](max) NULL,
+	[גפיים_ממצאים] [nvarchar](50) NULL,
+	[גפיים_פירוט ממצאים] [nvarchar](max) NULL,
+	[פרקי הירכיים_ממצאים] [nvarchar](50) NULL,
+	[פרקי הירכיים_פירוט ממצאים] [nvarchar](max) NULL,
+	[עמוד שדרה_ממצאים] [nvarchar](50) NULL,
+	[עמוד שדרה_פירוט ממצאים] [nvarchar](max) NULL,
+	[מערכת העצבים_ממצאים] [nvarchar](50) NULL,
+	[מערכת העצבים_פירוט ממצאים] [nvarchar](max) NULL,
+	[דפקים פמורליים_ממצאים] [nvarchar](50) NULL,
+	[דפקים פמורליים_פירוט ממצאים] [nvarchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_NutritionTracking]    Script Date: 29/08/2018 14:10:35 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BigData].[vw_NutritionTracking](
+	[PersonId] [bigint] NOT NULL,
+	[NutritionTrackingDate] [datetime] NOT NULL,
+	[FormulaManufacturerDesc] [nvarchar](50) NULL,
+	[FormulaTypeDesc] [nvarchar](50) NULL,
+	[NursingEndAgeMonths] [decimal](18, 1) NULL,
+	[FormulaStartAgeMonths] [decimal](18, 1) NULL,
+	[FormulaDetails] [nvarchar](250) NULL,
+	[FormulaReasonDesc] [nvarchar](50) NULL,
+	[IronDesc] [nvarchar](50) NULL,
+	[VitaminD3Desc] [nvarchar](50) NULL,
+	[NursingYN] [nvarchar](50) NULL,
+	[FormulaYN] [nvarchar](50) NULL,
+	[IsConsumptionAppropriteToAgeYN] [nvarchar](50) NULL,
+	[HasProblemsWithFeedingYN] [nvarchar](50) NULL,
+	[ParentsQuestion] [nvarchar](1200) NULL,
+	[IsGiven_Water] [smallint] NULL,
+	[AdditionalDrinksDetails] [nvarchar](1200) NULL,
+	[FamilyNutritionDesc] [nvarchar](1200) NULL,
+	[IsGiven_Fruits] [bit] NULL,
+	[IsGiven_Proteins] [bit] NULL,
+	[IsGiven_DairyProducts] [bit] NULL,
+	[IsGiven_Vegetables] [bit] NULL,
+	[IsGiven_Cereals] [bit] NULL,
+	[IsGiven_OtherFood] [bit] NULL,
+	[IsGiven_OtherFoodDetails] [nvarchar](250) NULL,
+	[IsSelfFeeding] [bit] NULL,
+	[IsGivenFromFamilyMeal] [bit] NULL,
+	[IsTrackingRequired] [bit] NULL,
+	[FoodsStartAgeMonths] [decimal](18, 1) NULL,
+	[Comment] [nvarchar](1200) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
+USE [BigData]
+GO
+
+/****** Object:  Table [BigData].[vw_VaccinationsPerPerson]    Script Date: 29/08/2018 14:12:21 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BigData].[vw_VaccinationsPerPerson](
+	[PersonId] [bigint] NOT NULL,
+	[VaccinationDesc] [nvarchar](50) NOT NULL,
+	[VaccinationDate] [datetime] NOT NULL,
+	[VacStatusDesc] [nvarchar](50) NOT NULL,
+	[VacStatusReasonDesc] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
++++++++++++++++++++++++++++++
