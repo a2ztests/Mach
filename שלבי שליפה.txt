@@ -1,0 +1,11 @@
+0. לעדכן את Create_Real_View_Identify_k_problematic_records
+1. אין צןרך להריץ את כל ה - SQL ששמם כולל insert - הוגדרו VIEWS במקום
+2. לייצא את הנתונים בעזרת ה - SQL ששמם מתחיל ב - VW_ ולבחור Unicode
+3. אם רוצים את המימדים - יש להריץ את מה שיש ב:
+C:\Users\amir.support\Machshava_Scripts\Dim_Tables
+
+BigData_user
+BigData1!
+
+SELECT *
+  FROM [BigData].[mng].[Demography_Nation]
