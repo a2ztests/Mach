@@ -1,0 +1,74 @@
+﻿<xsd:schema targetNamespace="urn:schemas-microsoft-com:sql:SqlRowSet1" xmlns:schema="urn:schemas-microsoft-com:sql:SqlRowSet1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sqltypes="http://schemas.microsoft.com/sqlserver/2004/sqltypes" elementFormDefault="qualified">
+  <xsd:import namespace="http://schemas.microsoft.com/sqlserver/2004/sqltypes" schemaLocation="http://schemas.microsoft.com/sqlserver/2004/sqltypes/sqltypes.xsd" />
+  <xsd:element name="Health_DWH.BRIUTNT_x005C_amir.shaked.vw_SightExamination">
+    <xsd:complexType>
+      <xsd:attribute name="PersonId" type="sqltypes:bigint" use="required" />
+      <xsd:attribute name="SightExaminationDate" type="sqltypes:datetime" />
+      <xsd:attribute name="InformationSourceDesc">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="SightExaminationTypeDesc">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="ChartTypeDesc">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="ExaminationDistance" type="sqltypes:smallint" />
+      <xsd:attribute name="SightAcuity_LeftEye">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="SightAcuity_RightEye">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="Result_LeftEye">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="Result_RightEye">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="Findings">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="1200" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="Comments">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="1200" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="Referral" type="sqltypes:int" use="required" />
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

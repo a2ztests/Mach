@@ -1,0 +1,68 @@
+﻿<xsd:schema targetNamespace="urn:schemas-microsoft-com:sql:SqlRowSet1" xmlns:schema="urn:schemas-microsoft-com:sql:SqlRowSet1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sqltypes="http://schemas.microsoft.com/sqlserver/2004/sqltypes" elementFormDefault="qualified">
+  <xsd:import namespace="http://schemas.microsoft.com/sqlserver/2004/sqltypes" schemaLocation="http://schemas.microsoft.com/sqlserver/2004/sqltypes/sqltypes.xsd" />
+  <xsd:element name="Health_DWH.BRIUTNT_x005C_amir.shaked.vw_MotherDemography">
+    <xsd:complexType>
+      <xsd:attribute name="MotherId" type="sqltypes:bigint" />
+      <xsd:attribute name="BirthDate">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:char" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="8" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="_x0020_mom_age_on_delivery" type="sqltypes:int" />
+      <xsd:attribute name="CountryCode" type="sqltypes:int" />
+      <xsd:attribute name="ShntAlia" type="sqltypes:smallint" />
+      <xsd:attribute name="NationCode" type="sqltypes:int" />
+      <xsd:attribute name="Profession">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="400" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="EducationLevelDesc">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="EducationLevelDetails">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="400" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="MaritalStatusDesc">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="MaritalStatusDetails">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="400" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="IsRelation">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="RelationDetails">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="400" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

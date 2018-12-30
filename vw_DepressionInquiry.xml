@@ -1,0 +1,35 @@
+﻿<xsd:schema targetNamespace="urn:schemas-microsoft-com:sql:SqlRowSet1" xmlns:schema="urn:schemas-microsoft-com:sql:SqlRowSet1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sqltypes="http://schemas.microsoft.com/sqlserver/2004/sqltypes" elementFormDefault="qualified">
+  <xsd:import namespace="http://schemas.microsoft.com/sqlserver/2004/sqltypes" schemaLocation="http://schemas.microsoft.com/sqlserver/2004/sqltypes/sqltypes.xsd" />
+  <xsd:element name="Health_DWH.BRIUTNT_x005C_amir.shaked.vw_DepressionInquiry">
+    <xsd:complexType>
+      <xsd:attribute name="PersonId" type="sqltypes:bigint" />
+      <xsd:attribute name="MotherPersonId" type="sqltypes:bigint" use="required" />
+      <xsd:attribute name="QuestionnaireDate" type="sqltypes:datetime" use="required" />
+      <xsd:attribute name="CodeStatus" type="sqltypes:smallint" use="required" />
+      <xsd:attribute name="StatusDesc">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="CodeStatusReason" type="sqltypes:smallint" />
+      <xsd:attribute name="StatusReasonDesc">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="MarkInGeneral" type="sqltypes:int" />
+      <xsd:attribute name="MarkForQuestionTen" type="sqltypes:int" />
+      <xsd:attribute name="Commnet">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="1200" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

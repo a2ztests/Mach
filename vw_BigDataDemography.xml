@@ -1,0 +1,42 @@
+﻿<xsd:schema targetNamespace="urn:schemas-microsoft-com:sql:SqlRowSet1" xmlns:schema="urn:schemas-microsoft-com:sql:SqlRowSet1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sqltypes="http://schemas.microsoft.com/sqlserver/2004/sqltypes" elementFormDefault="qualified">
+  <xsd:import namespace="http://schemas.microsoft.com/sqlserver/2004/sqltypes" schemaLocation="http://schemas.microsoft.com/sqlserver/2004/sqltypes/sqltypes.xsd" />
+  <xsd:element name="Health_DWH.BRIUTNT_x005C_amir.shaked.vw_BigDataDemography">
+    <xsd:complexType>
+      <xsd:attribute name="PersonId" type="sqltypes:bigint" use="required" />
+      <xsd:attribute name="IdEncrypt">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="MotherId" type="sqltypes:bigint" use="required" />
+      <xsd:attribute name="BirthDate" type="sqltypes:date" />
+      <xsd:attribute name="NationalityDesc">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="BirthCountryDesc">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="AddressCityDesc">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="GenderCode" type="sqltypes:int" />
+      <xsd:attribute name="BirthCountryCode" type="sqltypes:int" />
+      <xsd:attribute name="AddressCityCode" type="sqltypes:int" />
+      <xsd:attribute name="StationCode" type="sqltypes:int" />
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

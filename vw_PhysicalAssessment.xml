@@ -1,0 +1,261 @@
+﻿<xsd:schema targetNamespace="urn:schemas-microsoft-com:sql:SqlRowSet1" xmlns:schema="urn:schemas-microsoft-com:sql:SqlRowSet1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sqltypes="http://schemas.microsoft.com/sqlserver/2004/sqltypes" elementFormDefault="qualified">
+  <xsd:import namespace="http://schemas.microsoft.com/sqlserver/2004/sqltypes" schemaLocation="http://schemas.microsoft.com/sqlserver/2004/sqltypes/sqltypes.xsd" />
+  <xsd:element name="Health_DWH.BRIUTNT_x005C_amir.shaked.vw_PhysicalAssessment">
+    <xsd:complexType>
+      <xsd:attribute name="PersonId" type="sqltypes:float" use="required" />
+      <xsd:attribute name="AssessmentDate" type="sqltypes:datetime" />
+      <xsd:attribute name="ExaminationType" type="sqltypes:smallint" use="required" />
+      <xsd:attribute name="ExaminationTypeDesc">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="RoleCode" type="sqltypes:smallint" />
+      <xsd:attribute name="RoleDesc">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="HasReferal" type="sqltypes:int" use="required" />
+      <xsd:attribute name="Comment">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="1200" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="matzav_klalii_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="matzav_klalii_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="od_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="od_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="gulgolet_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="gulgolet_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="mirpasim_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="mirpasim_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="panim_veaf_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="panim_veaf_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="enayim_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="enayim_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="oznayim_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="oznayim_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="chalal_hape_vehalashon_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="chalal_hape_vehalashon_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="tzavar_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="tzavar_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="mivne_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="mivne_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="nesima_vereot_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="נnesima_vereot_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="lev_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="lev_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="beten_vetabur_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="beten_vetabur_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="evrey_hamin_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="evrey_hamin_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="gapayim_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="gapayim_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="pirkey_hayerechaim_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="pirkey_hayerechaim_peru_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="amud_shidra_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="amud_shidra_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="maarechet_haatzabim_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="maarechet_haatzabim_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="dfakim_femoralyim_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth">
+            <xsd:maxLength value="50" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="dfakim_femoralyim_perut_mimtzayim">
+        <xsd:simpleType>
+          <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1037" sqltypes:sqlCompareOptions="IgnoreCase IgnoreNonSpace IgnoreKanaType IgnoreWidth" />
+        </xsd:simpleType>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
